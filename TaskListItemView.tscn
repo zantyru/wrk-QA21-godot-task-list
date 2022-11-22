@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/font_ubuntu_14.tres" type="DynamicFont" id=1]
+[ext_resource path="res://TaskListItemView.gd" type="Script" id=2]
+
+[node name="TaskListItemView" type="ColorRect"]
+anchor_right = 0.973
+anchor_bottom = 0.12
+margin_right = 0.0999756
+margin_bottom = -0.0800018
+rect_min_size = Vector2( 292, 64 )
+color = Color( 0.670588, 0.803922, 0.937255, 1 )
+script = ExtResource( 2 )
+
+[node name="Number" type="Label" parent="."]
+margin_top = 24.0
+margin_right = 32.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "###"
+align = 1
+valign = 1
+
+[node name="Text" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 24.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?"
+valign = 1
+
+[node name="DateLabel" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_top = 4.0
+margin_right = 128.0
+margin_bottom = 28.0
+color = Color( 0.94, 0.861862, 0.6768, 1 )
+
+[node name="Text" type="Label" parent="DateLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0000-00-00"
+align = 1
+valign = 1
