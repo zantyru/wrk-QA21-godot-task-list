@@ -6,5 +6,12 @@ static func instantiate() -> TaskListItemView:
     ).instance() as TaskListItemView
 
 
-onready var message = $Text
-onready var date_label = $DateLabel/Text
+onready var _lbl_message = $Text
+onready var _lbl_date = $DateLabel/Text
+onready var _lbl_number = $Number
+
+
+func set_data(message: String, date: String, number: int) -> void:
+    _lbl_message.text = message
+    # _lbl_date
+    _lbl_number.text = str(number)
