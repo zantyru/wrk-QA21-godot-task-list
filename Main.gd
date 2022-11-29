@@ -27,6 +27,4 @@ func _on_Button_pressed() -> void:
     
     var task_list_item_view := TaskListItemView.instantiate()
     _tasks_gui_container.add_child(task_list_item_view)
-    
-    print(task_list_item_view.message)
-#    task_list_item_view.message.text = task_desc
+    task_list_item_view.set_data(text, "0000-00-00", len(_tasks))

@@ -28,18 +28,25 @@ rect_min_size = Vector2( 292, 488 )
 custom_constants/separation = 4
 
 [node name="TaskTextInput" type="TextEdit" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 492.0
-margin_right = 256.0
-margin_bottom = 532.0
+margin_top = -42.0
+margin_right = -44.0
+margin_bottom = -2.0
 middle_mouse_paste_enabled = false
 caret_blink = true
 
 [node name="Button" type="Button" parent="."]
-margin_left = 260.0
-margin_top = 492.0
-margin_right = 296.0
-margin_bottom = 532.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -42.0
+margin_right = -4.0
+margin_bottom = -2.0
 custom_fonts/font = ExtResource( 2 )
 text = "+"
 
