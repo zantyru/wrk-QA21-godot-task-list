@@ -30,6 +30,10 @@ config/name="godot-work-simple-task-list-with-bugs-v1"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+G="*res://G.tscn"
+
 [display]
 
 window/size/width=320

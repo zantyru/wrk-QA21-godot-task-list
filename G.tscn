@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+
+enum TaskEditMode {
+    NONE,
+    CREATE,
+    MODIFY 
+}
+
+
+var tasks: Array = []
+var target_task: Task = null
+
+
+func save_db() -> void:
+    
+    var dict := {
+        \"tasks\": []
+    }
+    var task_json: String
+    
+    for task in tasks:
+        task_json = (task as Task).serialize_to_json()
+        dict.tasks.append(task_json)
+    
+    var json: String = JSON.print(dict)
+    
+    var file: File = File.new()
+    file.open(\"db\", File.WRITE)
+    file.store_string(json)
+    file.close()
+
+
+func load_db() -> bool:
+    
+    var json: String
+    
+    var file: File = File.new()
+    file.open(\"db\", File.READ)
+    json = file.get_as_text()
+    file.close()
+    
+    var json_parse_result: JSONParseResult = JSON.parse(json)
+    var is_parsing_completed := json_parse_result.error == OK
+    
+    if is_parsing_completed:
+        
+        var dict: Dictionary = json_parse_result.result as Dictionary
+        is_parsing_completed = dict.has(\"tasks\")
+        
+        if is_parsing_completed:
+            
+            var task: Task = Task.new()
+            
+            for task_json in dict.tasks:
+                if task.deserialize_from_json(task_json):
+                    tasks.append(task)
+    
+    return is_parsing_completed
+    
+    
+"
+
+[node name="Global" type="Node"]
+script = SubResource( 1 )
