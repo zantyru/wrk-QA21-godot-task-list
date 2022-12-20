@@ -9,13 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "ColorRect",
-"class": "TaskListItemView",
+"base": "Reference",
+"class": "Task",
 "language": "GDScript",
-"path": "res://TaskListItemView.gd"
+"path": "res://types/Task.gd"
+}, {
+"base": "ColorRect",
+"class": "UI_TaskListItem",
+"language": "GDScript",
+"path": "res://UI_TaskListItem.gd"
 } ]
 _global_script_class_icons={
-"TaskListItemView": ""
+"Task": "",
+"UI_TaskListItem": ""
 }
 
 [application]
@@ -26,7 +32,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=300
+window/size/width=320
 window/size/height=534
 
 [gui]

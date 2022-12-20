@@ -1,30 +1,18 @@
 extends Control
 
 
-class TaskDescription:
-    var text := ""
-
-
-onready var _task_text_input = $TaskTextInput
-onready var _tasks_gui_container = $ScrollContainer/VBoxContainer
-
-
+onready var _ui_task_list = $ScrollContainer/VBoxContainer
 var _tasks: Array = []
 
 
-
 func _on_Button_pressed() -> void:
-    var text: String = _task_text_input.text.strip_edges()
     
-    if not text:
-        return
-        
-    _task_text_input.text = ""
+    var task: Task = Task.new()
     
-    var task_desc := TaskDescription.new()
-    task_desc.text = text
-    _tasks.append(task_desc)
+    task.create("Доработать функциональность программы")
+    _tasks.append(task)
     
-    var task_list_item_view := TaskListItemView.instantiate()
-    _tasks_gui_container.add_child(task_list_item_view)
-    task_list_item_view.set_data(text, "0000-00-00", len(_tasks))
+    var ui_task: UI_TaskListItem = UI_TaskListItem.instantiate()
+    ui_task.set_data(task)
+    
+    _ui_task_list.add_child(ui_task)
