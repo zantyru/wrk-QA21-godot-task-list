@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/font_ubuntu_32_for_buttons.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/font_ubuntu_14.tres" type="DynamicFont" id=2]
+
+[node name="CreateTask" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 4.0, 56.0, 60.0, 488.0, 492.0 ],
+"_edit_vertical_guides_": [ 4.0, 316.0, 52.0, 268.0 ]
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.980392, 0.941176, 0.901961, 1 )
+
+[node name="CreationDateLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -108.0
+margin_top = 4.0
+margin_right = 108.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "0000-00-00"
+align = 1
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -156.0
+margin_top = 60.0
+margin_right = 156.0
+margin_bottom = -46.0
+custom_fonts/font = ExtResource( 2 )
+middle_mouse_paste_enabled = false
+caret_blink = true
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -156.0
+margin_top = -42.0
+margin_right = 156.0
+margin_bottom = -2.0
