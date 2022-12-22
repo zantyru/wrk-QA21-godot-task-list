@@ -7,6 +7,7 @@ var creation_date_string: String = ""
 var creation_year: int = 0
 var creation_month: int = 0
 var creation_day: int = 0
+var is_completed: bool = false
 
 
 func create(new_message: String) -> void:
@@ -27,6 +28,7 @@ func serialize_to_json() -> String:
         "creation_year": creation_year,
         "creation_month": creation_month,
         "creation_day": creation_day,
+        "is_completed": is_completed,
     })
 
 
@@ -48,6 +50,7 @@ func deserialize_from_json(json: String) -> bool:
             creation_year = dict.creation_year
             creation_month = dict.creation_month
             creation_day = dict.creation_day
+            is_completed = dict.get("is_completed", false)
             
             var datetime_string: String = Time.get_datetime_string_from_datetime_dict({
                 "year": creation_year,
