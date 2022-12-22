@@ -45,9 +45,9 @@ func deserialize_from_json(json: String) -> bool:
         if is_parsing_completed:
             
             message = dict.message
-            creation_year = dict.year
-            creation_month = dict.month
-            creation_day = dict.day
+            creation_year = dict.creation_year
+            creation_month = dict.creation_month
+            creation_day = dict.creation_day
             
             var datetime_string: String = Time.get_datetime_string_from_datetime_dict({
                 "year": creation_year,
