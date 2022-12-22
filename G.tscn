@@ -15,6 +15,16 @@ var tasks: Array = []
 var target_task: Task = null
 
 
+func _ready() -> void:
+    
+    load_db()
+
+
+func __clear_tasks_array() -> void:
+    
+    tasks.clear()
+
+
 func save_db() -> void:
     
     var dict := {
@@ -54,6 +64,8 @@ func load_db() -> bool:
         if is_parsing_completed:
             
             var task: Task = Task.new()
+            
+            __clear_tasks_array()
             
             for task_json in dict.tasks:
                 if task.deserialize_from_json(task_json):

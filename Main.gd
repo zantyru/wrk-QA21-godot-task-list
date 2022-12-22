@@ -6,7 +6,6 @@ onready var _ui_task_list = $ScrollContainer/VBoxContainer
 
 func _ready() -> void:
     
-    G.load_db()  #@!
     update_ui()
 
 
