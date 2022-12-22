@@ -4,9 +4,8 @@
 [ext_resource path="res://UI_TaskListItem.gd" type="Script" id=2]
 
 [node name="UI_TaskListItem" type="ColorRect"]
-anchor_right = 0.973
+anchor_right = 0.975
 anchor_bottom = 0.12
-margin_right = 0.0999756
 margin_bottom = -0.0800018
 rect_min_size = Vector2( 292, 64 )
 color = Color( 0.670588, 0.803922, 0.937255, 1 )

@@ -25,4 +25,5 @@ func update_ui() -> void:
 
 func _on_Button_pressed() -> void:
     
-    get_tree().change_scene("res://CreateTask.tscn")
+    var _e: int
+    _e = get_tree().change_scene("res://CreateTask.tscn")
