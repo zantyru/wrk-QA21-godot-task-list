@@ -6,8 +6,8 @@ static func instantiate() -> UI_TaskListItem:
     ).instance() as UI_TaskListItem
 
 
-onready var _ui_message = $Text
-onready var _ui_date = $DateLabel/Text
+onready var _ui_message: Label = $Text
+onready var _ui_date: Label = $DateLabel/Text
 var _task: Task = null
 
 
@@ -17,7 +17,7 @@ func _ready() -> void:
         return
     
     _ui_message.text = _task.message
-    _ui_date = _task.creation_date_string
+    _ui_date.text = _task.creation_date_string
     _task = null
 
 

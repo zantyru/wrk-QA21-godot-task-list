@@ -56,5 +56,12 @@ func deserialize_from_json(json: String) -> bool:
             }, false)
             
             creation_date_string = datetime_string.split("T")[0]
+            
+            print_debug(
+                "Task.deserialize_from_json()"
+                + "\n\tdict = " + str(dict)
+                + "\n\tdatetime_string = " + datetime_string
+                + "\n\tcreation_date_string = " + creation_date_string
+            )
     
     return is_parsing_completed

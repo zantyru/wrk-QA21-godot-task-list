@@ -1,7 +1,8 @@
 extends Control
 
 
-onready var _ui_task_list = $ScrollContainer/VBoxContainer
+onready var _ui_task_list: VBoxContainer = $ScrollContainer/VBoxContainer
+onready var _ui_set_date_button: Button = $DateControlButtons/SetDateButton
 
 
 func _ready() -> void:
@@ -10,6 +11,8 @@ func _ready() -> void:
 
 
 func update_ui() -> void:
+    
+    _ui_set_date_button.text = Time.get_datetime_string_from_system().split("T")[0]
     
     for child in _ui_task_list.get_children():
         _ui_task_list.remove_child(child)
