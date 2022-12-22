@@ -11,6 +11,9 @@ enum TaskEditMode {
 }
 
 
+const DB_PATH := \"db\"
+
+
 var tasks: Array = []
 var target_task: Task = null
 
@@ -27,10 +30,11 @@ func __clear_tasks_array() -> void:
 
 func save_db() -> void:
     
+    var _e: int
+    var task_json: String
     var dict := {
         \"tasks\": []
     }
-    var task_json: String
     
     for task in tasks:
         task_json = (task as Task).serialize_to_json()
@@ -39,17 +43,21 @@ func save_db() -> void:
     var json: String = JSON.print(dict)
     
     var file: File = File.new()
-    file.open(\"db\", File.WRITE)
+    _e = file.open(DB_PATH, File.WRITE)
     file.store_string(json)
     file.close()
 
 
 func load_db() -> bool:
     
-    var json: String
-    
+    var _e: int
+    var json: String    
     var file: File = File.new()
-    file.open(\"db\", File.READ)
+    
+    if not file.file_exists(DB_PATH):
+        return false
+    
+    _e = file.open(DB_PATH, File.READ)
     json = file.get_as_text()
     file.close()
     
